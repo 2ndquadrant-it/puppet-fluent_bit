@@ -3,11 +3,11 @@
     "dependencies": [
         {
             "name": "puppetlabs/stdlib",
-            "version_requirement": "4.x"
+            "version_requirement": ">= 4.13.0 < 5.0.0"
         },
         {
             "name": "puppetlabs/apt",
-            "version_requirement": "2.x"
+            "version_requirement": ">= 2.0.0 < 5.0.0"
         }
     ],
     "issues_url": "https://github.com/yannh/puppet_fluent_bit/issues",
