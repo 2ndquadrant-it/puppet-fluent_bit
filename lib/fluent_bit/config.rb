@@ -15,7 +15,7 @@ module FluentBitConfig
     private
 
     def render(c)
-      "[#{c["service"]}.upcase]\n" + \
+      "[#{c["service"].upcase}]\n" + \
       c.select{ |e| e !="service" }
        .map { |k, v|
           key = k.strip.downcase
