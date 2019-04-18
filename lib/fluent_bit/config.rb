@@ -19,7 +19,7 @@ module FluentBitConfig
       c.select{ |e| e !="service" }
        .map { |k, v|
           key = k.strip.downcase
-          value = v.strip.downcase
+          value = v.strip
           padding = 15 - key.length
           padding = padding < 1 ? 1 : padding
           "  " << key << " "*padding <<  value}
