@@ -22,6 +22,8 @@ class fluent_bit (
   String $config_owner = $::fluent_bit::params::config_owner,
   String $config_group = $::fluent_bit::params::config_group,
   Hash $configs = $::fluent_bit::params::configs,
+  String $parsers_file = $::fluent_bit::params::parsers_file,
+  Optional[Hash] $parsers = $::fluent_bit::params::parsers,
 ) inherits fluent_bit::params {
   contain fluent_bit::install
   contain fluent_bit::config

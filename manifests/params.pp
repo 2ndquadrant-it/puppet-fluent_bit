@@ -32,4 +32,6 @@ class fluent_bit::params {
   $config_owner = 'root'
   $config_group = 'root'
   $configs = {}
+  $parsers_file = '/etc/td-agent-bit/parsers.conf'
+  $parsers = undef
 }
