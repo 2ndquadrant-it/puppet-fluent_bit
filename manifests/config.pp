@@ -15,7 +15,7 @@ class fluent_bit::config inherits fluent_bit {
     content => fluent_bit_config($fluent_bit::configs),
     require => Class['Fluent_bit::Install'],
     notify  => Class['Fluent_bit::Service'],
-  } ->
+  }
 
   # Write the parser file only if we defined parsers on our own.
   # This allows us to use the default one if we do not define anything.
@@ -23,7 +23,7 @@ class fluent_bit::config inherits fluent_bit {
     file { $fluent_bit::parsers_file:
       ensure  => present,
       content => fluent_bit_config($fluent_bit::parsers),
-      require => Class['Fluent_bit::Install'],
+      require => File[$fluent_bit::config_file],
       notify  => Class['Fluent_bit::Service'],
     }
   }
