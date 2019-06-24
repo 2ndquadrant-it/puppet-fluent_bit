@@ -24,6 +24,7 @@ class fluent_bit (
   Hash $configs = $::fluent_bit::params::configs,
   String $parsers_file = $::fluent_bit::params::parsers_file,
   Optional[Hash] $parsers = $::fluent_bit::params::parsers,
+  Optional[Hash] $upstreams = $::fluent_bit::params::upstreams,
 ) inherits fluent_bit::params {
   contain fluent_bit::install
   contain fluent_bit::config

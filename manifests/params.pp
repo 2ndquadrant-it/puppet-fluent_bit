@@ -34,4 +34,5 @@ class fluent_bit::params {
   $configs = {}
   $parsers_file = '/etc/td-agent-bit/parsers.conf'
   $parsers = undef
+  $upstreams = undef
 }

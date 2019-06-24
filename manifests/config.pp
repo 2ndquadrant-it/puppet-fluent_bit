@@ -27,4 +27,16 @@ class fluent_bit::config inherits fluent_bit {
       notify  => Class['Fluent_bit::Service'],
     }
   }
+
+  # Create upstreams when defined.
+  if $fluent_bit::upstreams {
+    $fluent_bit::upstreams.each |$name, $config| {
+      file { "${fluent_bit::config_path}/upstream_${name}.conf":
+        ensure  => present,
+        content => fluent_bit_config($config),
+        require => File[$fluent_bit::config_file],
+        notify  => Class['Fluent_bit::Service'],
+      }
+    }
+  }
 }
